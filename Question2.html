@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Simelwe Ngcobo">
+  <title>2025 Election Results</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
+  <style>
+     body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+  }
+
+  canvas {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+</style>
+
+</head>
+<body>
+
+  <h1>2025 Election Results</h1>
+  <canvas id="electionChart"></canvas>
+
+  <script>
+  const ctx = document.getElementById('electionChart').getContext('2d'); //retriving ID from so piechart can be built on it
+
+const electionChart = new Chart(ctx, { //Where the building of the piechart beings
+  type: 'pie', //Type pf chart 
+  data: { //information to be dispalyed on the pie chart
+    labels: ['DAD (45%)', 'PPP (5%)', 'CCCC (27%)', 'MCD (23%)'],
+    datasets: [{ //Set of values that the data will display
+      label: 'Election Results',
+      data: [45, 5, 27, 23],//Each number must correspond with your lables
+      backgroundColor: [ //Your Colours
+        '#ff6384', // DAD - Red/Pink
+        '#36a2eb', // PPP - Blue
+        '#ffce56', // CCCC - Yellow
+        '#4bc0c0'  // MCD - Teal
+      ],
+      borderWidth: 1 //Thickness of each slie
+    }]
+  },
+  options: { //Customisations
+    responsive: true,//Resize automatically
+    plugins: {
+      legend: {
+        position: 'bottom'
+      },
+      title: { //Title on top
+        display: true,
+        text: '2025 National Election Results'
+      }
+    }
+  }
+});
+
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
